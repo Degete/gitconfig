@@ -1,0 +1,26 @@
+# General
+[init]
+  # Override default branch name
+  defaultBranch = main
+
+[help]
+  # Override default help format
+  format = man
+
+# Editor
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+
+# Tools
+[pull]
+  rebase = false
+[merge]
+  tool = vimdiff
+[diff]
+  tool = vimdiff
+
+[include]
+  # Include external gitconfig file (git >= 1.7.10)
+  # Typically, user.name and user.email is configured
+  path = ~/.gitconfig.local
