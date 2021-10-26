@@ -1,0 +1,84 @@
+# General
+[init]
+  # Override default branch name
+  defaultBranch = main
+
+[help]
+  # Automatically correct and execute mistyped commands after waiting for the given number of deciseconds (0.1 sec).
+  autocorrect = 30
+  # Override default help format
+  format = man
+
+# Signatures
+[gpg]
+  program = gpg
+
+# Editor
+[core]
+  editor = nvim
+  excludesfile = ~/.git/.gitignore
+
+# UI config
+[column]
+  ui = never
+[color]
+  # Determines the default value for variables such as `color.diff` and `color.grep` that control the use of color per command family.
+  ui = auto
+[color "branch"]
+  current = yellow bold
+  local   = green bold
+  remote  = cyan bold
+[color "diff"]
+  meta       = yellow bold
+  frag       = magenta bold
+  old        = red bold
+  new        = green bold
+  whitespace = red reverse
+[color "status"]
+  added     = green bold
+  changed   = yellow bold
+  untracked = red bold
+
+# Tools
+[pull]
+  rebase = false
+[push]
+  # Push should only push current branch, not all branches.
+  default = current
+  # Enable `--follow-tags` option by default.
+  followTags = true
+[merge]
+  tool = vimdiff
+[diff]
+  tool = vimdiff
+
+# Large file storage
+[filter "lfs"]
+  clean    = git-lfs clean -- %f
+  smudge   = git-lfs smudge -- %f
+  process  = git-lfs filter-process
+  required = true
+
+# Aliases
+[alias]
+  today = log --since=midnight --color --graph \
+            --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
+            --abbrev-commit
+  yesterday = log --since yesterday --until=midnight --color --graph \
+            --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
+            --abbrev-commit
+  graph = log --graph --abbrev-commit --decorate --all \
+    --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) \
+    - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+  history = log --graph --pretty=format:'%C(yellow)%h%Creset \
+            -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' \
+            --abbrev-commit --date=short --date-order -n30
+
+  remotes  = remote -v
+  branches = branch -a
+
+# External gitconfig files (git >= 1.7.10)
+[include]
+  path = ~/.git/user.default.gitconfig
+[includeIf "gitdir:~/Code/Paidy/"]
+  path = ~/.git/user.paidy.gitconfig

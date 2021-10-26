@@ -1,0 +1,7 @@
+[user]
+  name = David Garcia Tort
+  email = degete@outlook.com
+  signingkey = 05DF1C01DFB6D9FB
+
+[commit]
+  gpgsign = true
