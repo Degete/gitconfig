@@ -20,7 +20,7 @@ brew install pinentry-mac
 
 Add the config to `gpg-agent` in order to work with `pinentry-mac`:
 ```sh
-echo 'pinentry-program /usr/local/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 ```
 
 Restart `gpg-agent` in order to load the config, and you are ready to go:
