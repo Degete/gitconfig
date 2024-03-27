@@ -1,0 +1,10 @@
+[user]
+  name = David Garcia Tort
+  email = david.garcia.tort@wolt.com
+  signingkey = 05DF1C01DFB6D9FB
+
+[commit]
+  gpgsign = true
+
+[url "ssh://git@github.com/creditornot"]
+	insteadOf = https://github.com/creditornot
