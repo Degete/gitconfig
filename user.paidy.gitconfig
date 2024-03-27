@@ -1,7 +1,0 @@
-[user]
-  name = David Garcia Tort
-  email = david.tort@paidy.com
-  signingkey = 02130DD70F3E2B0E
-
-[commit]
-  gpgsign = true

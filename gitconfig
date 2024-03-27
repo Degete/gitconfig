@@ -84,5 +84,5 @@
 # External gitconfig files (git >= 1.7.10)
 [include]
   path = ~/.git/user.default.gitconfig
-[includeIf "gitdir:~/Code/Paidy/"]
-  path = ~/.git/user.paidy.gitconfig
+[includeIf "gitdir:~/Code/Wolt/"]
+  path = ~/.git/user.wolt.gitconfig
