@@ -1,0 +1,7 @@
+# Editor
+[core]
+  editor = nvim
+
+# Signatures
+[gpg]
+  program = gpg
