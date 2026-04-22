@@ -1,0 +1,8 @@
+# Editor
+[core]
+  editor = nvim
+  excludesfile = ~/.git/.gitignore
+
+# Signatures
+[gpg]
+  program = gpg

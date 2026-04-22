@@ -8,29 +8,27 @@
 cd ~
 git clone --recursive git@github.com:degete/gitconfig.git ~/.git
 ln -s .git/gitconfig .gitconfig
+cp .git/gitconfig.local .gitconfig.local
 ```
 
-## GPG passphrase on macOS
+## Config ssh keys
 
-You might want to have integration to store your keys on the Keychain in macOS, for that install
+Modify `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+
 
 ```sh
-brew install pinentry-mac
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes # If don't use a passphrase, omit this
+  IdentityFile ~/.ssh/<id_ed25519>
 ```
 
-Add the config to `gpg-agent` in order to work with `pinentry-mac`:
-```sh
-echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
-```
+## Add private keys to the ssh-agent
 
-Restart `gpg-agent` in order to load the config, and you are ready to go:
-
-```sh
-killall gpg-agent
-```
-
-To check everything is up, you can execute the command which will ask your passphrase and will allow you to save it on the Keychain.
+To add the keys and store your passphrase in the keychain:
 
 ```sh
-echo "Test" | gpg --clearsign
+ssh-add --apple-use-keychain ~/.ssh/<id_ed25519>
 ```
+
+> The --apple-use-keychain option stores the passphrase in your keychain for you when you add an SSH key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the --apple-use-keychain option.
