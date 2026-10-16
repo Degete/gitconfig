@@ -5,7 +5,7 @@
 Desktop.ini
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -48,7 +48,8 @@ Temporary Items
 # Vim
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+# comment out if you don't need vector files
+!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -60,6 +61,15 @@ Sessionx.vim
 .netrwhist
 *~
 # Auto-generated tag files
-tags
+/tags
 # Persistent undo
 [._]*.un~
+
+# Secrets / local environment
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.envrc
+.direnv/
