@@ -1,23 +1,23 @@
 # Preferences
 [include]
-  path = ~/.git/preferences.gitconfig
+  path = ~/.gitconfig.d/preferences.gitconfig
 
 # UI
 [include]
-  path = ~/.git/ui.gitconfig
+  path = ~/.gitconfig.d/ui.gitconfig
 
 # Tooling
 [include]
-  path = ~/.git/tooling.gitconfig
+  path = ~/.gitconfig.d/tooling.gitconfig
 
 # Aliases
 [include]
-  path = ~/.git/aliases.gitconfig
+  path = ~/.gitconfig.d/aliases.gitconfig
 
 # Integrations
 [include]
-  path = ~/.git/integrations/delta.gitconfig
+  path = ~/.gitconfig.d/integrations/delta.gitconfig
 
 # Profiles
 [include]
-  path = ~/.git/user.default.gitconfig
+  path = ~/.gitconfig.d/user.default.gitconfig

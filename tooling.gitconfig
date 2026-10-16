@@ -1,7 +1,7 @@
 # Editor
 [core]
   editor = nvim
-  excludesfile = ~/.git/.gitignore
+  excludesfile = ~/.gitconfig.d/.gitignore
 
 # Signatures
 [gpg]
