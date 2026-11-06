@@ -1,5 +1,6 @@
 [column]
-  ui = never
+  # Show listing output (branch, tag, status) in columns when writing to a terminal.
+  ui = auto
 
 [color]
   # Determines the default value for variables such as `color.diff` and `color.grep` that control the use of color per command family.

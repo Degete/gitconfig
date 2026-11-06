@@ -1,37 +1,88 @@
-[help]
-  # Automatically correct and execute mistyped commands after waiting for the given number of deciseconds (0.1 sec).
-  autocorrect = 30
-  # Override the default help format used by `git help`.
-  format = man
-
 [init]
   # Override the default branch name.
   defaultBranch = main
 
+[branch]
+  # Show most recently used branches first.
+  sort = -committerdate
+
+[tag]
+  # Sort tags as version numbers (v1.10 after v1.9, not after v1.1).
+  sort = version:refname
+
+[merge]
+  # Controls which merge tool is used by git-merge.
+  tool = nvimdiff
+  conflictstyle = zdiff3
+
 [pull]
   rebase = true
 
-[rebase]
-  # Automatically create a temporary stash entry before the operation begins, and apply it after the operation ends.
-  autostash = true
-
-[status]
-  # Enable the submodule summary and show a summary of commits for modified submodules
-  submoduleSummary = true
+[fetch]
+  # Remove remote-tracking refs that no longer exist on the remote.
+  prune = true
+  # Remove local tags that no longer exist on the remote.
+  pruneTags = true
+  # Fetch all remotes by default.
+  all = true
 
 [push]
   # Push should only push current branch, not all branches.
   default = current
   # Enable `--follow-tags` option by default.
   followTags = true
+  # Automatically set up remote tracking on the first push of a new branch.
+  autoSetupRemote = true
 
-[merge]
-  # Controls which merge tool is used by git-merge.
-  tool = vimdiff
-  conflictstyle = diff3
+[commit]
+  # Show the diff of staged changes in the commit message editor.
+  verbose = true
+
+[rebase]
+  # Automatically create a temporary stash entry before the operation begins, and apply it after the operation ends.
+  autostash = true
+  # Automatically reorder `fixup!`/`squash!` commits in interactive rebase.
+  autoSquash = true
+  # Update stacked branches that point into the rebased range.
+  updateRefs = true
+  # Abort interactive rebase if a commit line was accidentally removed from the todo list.
+  missingCommitsCheck = error
+
+[rerere]
+  # Record and reuse previous conflict resolutions.
+  enabled = true
+  autoupdate = true
+
+[diff]
+  # Better hunk boundaries than the default Myers algorithm.
+  algorithm = histogram
+  # Use `i/` (index), `w/` (working tree) and `c/` (commit) prefixes instead of `a/` and `b/`.
+  mnemonicPrefix = true
+  # Detect renamed files (and copies).
+  renames = copies
+  # Show submodule changes as a commit log.
+  submodule = log
+
+[status]
+  # Enable the submodule summary and show a summary of commits for modified submodules
+  submoduleSummary = true
+
+[log]
+  # Show dates in ISO 8601 format (2026-11-06 15:14:00 +0100).
+  date = iso
+
+[submodule]
+  # Make checkout/pull/switch also update submodules.
+  recurse = true
 
 [filter "lfs"]
   clean    = git-lfs clean -- %f
   smudge   = git-lfs smudge -- %f
   process  = git-lfs filter-process
   required = true
+
+[help]
+  # Show the suggested command for a mistyped command and prompt for confirmation to run it.
+  autocorrect = prompt
+  # Override the default help format used by `git help`.
+  format = man
